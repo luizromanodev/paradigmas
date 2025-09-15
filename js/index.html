@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teste de Escopo</title>
+  </head>
+  <body>
+    <h1>Abra o console para ver o resultado</h1>
+    <script>
+      let x = 10;
+      console.log(`1. 'x' global definido como: ${x}`);
+
+      function f() {
+        console.log(`4. Dentro de f(), o valor de 'x' é: ${x}`);
+      }
+
+      function g() {
+        let x = 20;
+        console.log(
+          `3. Dentro de g(), 'x' local definido como: ${x}. Chamando f()...`
+        );
+        f();
+      }
+
+      console.log("2. Chamando g()...");
+      g();
+    </script>
+  </body>
+</html>
